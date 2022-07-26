@@ -6,8 +6,8 @@ import YouTube from "react-youtube";
 
 export default function IdFraud({ data }) {
   //State variables
-  const [state, setState] = useState();
-  const [notFraud, setNotFraud] = useState(false);
+  const [state, setState] = useState([]);
+  const [notFraud, setNotFraud] = useState();
   //Check if fraud detected
   const isFraud = (status) => {
     if (status === true) {
@@ -32,7 +32,7 @@ export default function IdFraud({ data }) {
     fetch(`/api/frauds/${data.id}`, options)
       .then((response) => response.json())
       .then((res) => {
-        setState(res);
+        setNotFraud(res);
       })
       .catch((error) => console.log(error));
   };
@@ -82,7 +82,7 @@ export default function IdFraud({ data }) {
                 <ul className={fraudStyles.ul}>
                   <li>Magasin : {data.storeId}</li>
                   <li>Panier : {data.cartId}</li>
-                  <li>IsFraud : {isFraud(data.fraud)}</li>
+                  <li>Status : {isFraud(data.fraud)}</li>
                 </ul>
                 <form onSubmit={handleNotFraud} className={fraudStyles.actions}>
                   <button
