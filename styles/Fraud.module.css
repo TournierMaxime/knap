@@ -79,3 +79,21 @@
   margin: 0.5em 0;
   cursor: pointer;
 }
+
+@media (max-width: 900px) {
+  .cardContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .cardContainerLeft iframe {
+    display: flex;
+    width: 100%;
+  }
+
+  .cardContainerRight {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}

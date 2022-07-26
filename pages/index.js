@@ -1,7 +1,10 @@
+//Imports
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import moment from "moment";
+//
 export default function Home({ data }) {
+  //Check if fraud detected
   const isFraud = (status) => {
     if (status === true) {
       return "Fraude détectée";
@@ -11,7 +14,7 @@ export default function Home({ data }) {
       return "Non jugée";
     }
   };
-
+  //sort elements by date and return them
   return data.frauds
     .sort(function (a, b) {
       if (a.timestamp) {
@@ -40,7 +43,7 @@ export default function Home({ data }) {
       );
     });
 }
-
+//Api call
 export async function getStaticProps() {
   const response = await fetch("http://localhost:3000/api/frauds");
   const data = await response.json();

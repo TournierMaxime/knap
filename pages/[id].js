@@ -1,11 +1,14 @@
+//Imports
 import React, { Fragment, useState, useEffect } from "react";
 import fraudStyles from "../styles/Fraud.module.css";
 import homeStyles from "../styles/Home.module.css";
 import YouTube from "react-youtube";
+
 export default function IdFraud({ data }) {
+  //State variables
   const [state, setState] = useState();
   const [notFraud, setNotFraud] = useState(false);
-
+  //Check if fraud detected
   const isFraud = (status) => {
     if (status === true) {
       return "Fraude détectée";
@@ -15,7 +18,7 @@ export default function IdFraud({ data }) {
       return "Non jugée";
     }
   };
-
+  //Change the state value of an article
   const handleNotFraud = (e) => {
     e.preventDefault();
     const formData = { notFraud };
@@ -33,7 +36,7 @@ export default function IdFraud({ data }) {
       })
       .catch((error) => console.log(error));
   };
-
+  //Re render the object
   useEffect(() => {
     fetch(`/api/frauds/${data.id}`, {
       method: "GET",
@@ -67,7 +70,11 @@ export default function IdFraud({ data }) {
             ) : null}
             <div className={fraudStyles.cardContainer}>
               <div className={fraudStyles.cardContainerLeft}>
-                <YouTube videoId={data.video} opts={opts} />
+                <YouTube
+                  className={fraudStyles.youtube}
+                  videoId={data.video}
+                  opts={opts}
+                />
               </div>
               <div className={fraudStyles.cardContainerRight}>
                 <h3 className={fraudStyles.titles}>Article concerné</h3>

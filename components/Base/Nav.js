@@ -1,3 +1,4 @@
+//Imports
 import React, { Fragment } from "react";
 import Logo from "../../public/assets/images/logo-knap-title.dc9dee31.svg";
 import Image from "next/image";
