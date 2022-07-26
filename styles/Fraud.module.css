@@ -1,0 +1,81 @@
+.span {
+  position: relative;
+}
+.pastille {
+  height: 1em;
+  width: 1em;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  border: none;
+  position: absolute;
+  bottom: 1em;
+}
+.cardFraud {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.cardContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.cardContainerLeft {
+  display: flex;
+  width: 70%;
+}
+
+.cardContainerRight {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+.titles h3 {
+  margin: 0;
+  padding: 0;
+}
+.p {
+  font-size: 1em !important;
+}
+
+.ul {
+  list-style-type: none;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+}
+
+.dangerButton {
+  margin: 0.5em 0;
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 0.5em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  border-radius: 0.2em;
+  cursor: pointer;
+}
+
+.successButton {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 0.5em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  border-radius: 0.2em;
+  margin: 0.5em 0;
+  cursor: pointer;
+}

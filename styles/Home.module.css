@@ -3,9 +3,7 @@
 }
 
 .main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
+  padding: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -74,7 +72,6 @@
 }
 
 .card {
-  margin: 1rem;
   padding: 1.5rem;
   text-align: left;
   color: inherit;
@@ -82,10 +79,11 @@
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+  width: 100%;
+  max-width: 50em;
 }
 
-.card:hover,
+/*.card:hover,*/
 .card:focus,
 .card:active {
   color: #0070f3;
@@ -103,11 +101,6 @@
   line-height: 1.5;
 }
 
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
 @media (max-width: 600px) {
   .grid {
     width: 100%;
@@ -115,15 +108,23 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
-  }
-  .code {
-    background: #111;
-  }
-  .logo img {
-    filter: invert(1);
-  }
+.logo {
+  padding: 1em !important;
+}
+
+.button {
+  background-color: #0070f3;
+  border: none;
+  color: white;
+  padding: 0.5em;
+  margin: 1em 1em 0 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  border-radius: 0.2em;
+}
+
+.link {
+  color: white;
 }
